@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+body { @apply bg-cream text-charcoal font-sans antialiased; }
+h1, h2, h3 { @apply font-serif text-forest; }
+section[id] { scroll-margin-top: 4.5rem; }
+:focus-visible { outline: 2px solid #b8975a; outline-offset: 2px; }
+
+.btn { @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition-colors; }
+.btn-gold { @apply bg-gold text-forest hover:bg-gold-dark hover:text-white; }
+.btn-forest { @apply bg-forest text-cream hover:bg-forest-light; }
+.btn-line { @apply border border-white/70 text-white hover:bg-white/10; }
+.field { @apply w-full rounded-lg border border-forest/20 bg-white px-3 py-2.5 text-sm; }
+
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity .7s, transform .7s; }
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
